@@ -1,0 +1,28 @@
+<section>
+    <h2>Formulario de Datos</h2>
+    <form id="formulario">
+        <label>Identificación: <input type="text" id="identificacion"></label><br><br>
+        <label>Nombres: <input type="text" id="nombres"></label><br><br>
+        <label>Apellidos: <input type="text" id="apellidos"></label><br><br>
+        <label>Email: <input type="email" id="email"></label><br><br>
+        <label>Teléfono: <input type="text" id="telefono"></label><br><br>
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+    <p id="mensaje"></p>
+    <script>
+        function validarFormulario() {
+            const campos = ['identificacion', 'nombres', 'apellidos', 'email', 'telefono'];
+            let mensaje = "Campos vacíos: ";
+            let hayVacios = false;
+
+            campos.forEach(campo => {
+                if (document.getElementById(campo).value.trim() === "") {
+                    mensaje += `${campo}, `;
+                    hayVacios = true;
+                }
+            });
+
+            document.getElementById('mensaje').innerHTML = hayVacios ? mensaje : "Formulario enviado correctamente.";
+        }
+    </script>
+</section>

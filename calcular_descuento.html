@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Descuento</title>
+</head>
+<body>
+    <section>
+        <h2>Calcular Descuento</h2>
+        <p>Ingresa el monto de la compra para calcular el descuento aplicable:</p>
+        <label>Monto: <input type="number" id="monto"></label><br><br>
+        <button onclick="calcularDescuento()">Calcular Descuento</button>
+        <p id="resultado"></p>
+    </section>
+
+    <script>
+        function calcularDescuento() {
+            const monto = parseFloat(document.getElementById('monto').value);
+            let descuento = 0;
+
+            if (monto > 100000 && monto <= 500000) {
+                descuento = 10;
+            } else if (monto > 500000 && monto <= 1000000) {
+                descuento = 20;
+            }
+
+            const montoFinal = monto - (monto * descuento / 100);
+            const mensaje = descuento > 0 ? `Descuento del ${descuento}%. Monto final: $${montoFinal.toFixed(2)}` : "No hay descuento aplicable.";
+            
+            document.getElementById('resultado').innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>

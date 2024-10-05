@@ -1,0 +1,17 @@
+<section>
+    <h2>Calcular Días entre Dos Fechas</h2>
+    <p>Ingresa dos fechas para calcular el número de días entre ellas.</p>
+    <label>Fecha 1: <input type="date" id="fecha1"></label><br><br>
+    <label>Fecha 2: <input type="date" id="fecha2"></label><br><br>
+    <button onclick="calcularDias()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularDias() {
+            const fecha1 = new Date(document.getElementById('fecha1').value);
+            const fecha2 = new Date(document.getElementById('fecha2').value);
+            const diferencia = Math.abs(fecha2 - fecha1);
+            const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+            document.getElementById('resultado').innerHTML = `Días entre las dos fechas: ${dias}`;
+        }
+    </script>
+</section>

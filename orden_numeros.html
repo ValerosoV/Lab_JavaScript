@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Números</title>
+</head>
+<body>
+    <section>
+        <h2>Verificar Orden de Números</h2>
+        <p>Ingresa dos números para determinar si están en orden creciente o decreciente:</p>
+        <label>Número 1: <input type="number" id="num1"></label><br><br>
+        <label>Número 2: <input type="number" id="num2"></label><br><br>
+        <button onclick="verificarOrden()">Verificar Orden</button>
+        <p id="resultado"></p>
+    </section>
+
+    <script>
+        function verificarOrden() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let resultado = "";
+
+            if (num1 < num2) {
+                resultado = "Los números están en orden creciente.";
+            } else if (num1 > num2) {
+                resultado = "Los números están en orden decreciente.";
+            } else {
+                resultado = "Los números son iguales.";
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

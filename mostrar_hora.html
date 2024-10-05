@@ -1,0 +1,12 @@
+<section>
+    <h2>Mostrar Hora y Día Actual</h2>
+    <p id="hora"></p>
+    <script>
+        function mostrarHora() {
+            const fecha = new Date();
+            document.getElementById('hora').innerHTML = `Hora actual: ${fecha.toLocaleTimeString()} <br> Día actual: ${fecha.toLocaleDateString()}`;
+        }
+        mostrarHora();
+        setInterval(mostrarHora, 1000);
+    </script>
+</section>
